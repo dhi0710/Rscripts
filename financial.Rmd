@@ -1,0 +1,59 @@
+
+ <style type="text/css">
+ /*  CSS chunck 1  */
+ th {  background-color:#6495ed ;
+       border-bottom:1px solid black;
+       font-family: sans-serif;
+       font-size: 95%;
+       padding:5px;}
+
+ td{
+ border-bottom:1px dotted black;
+ font-family: sans-serif;
+ font-size: 95%;
+ padding:5px;}
+
+ table {
+     border-collapse: collapse;
+     font-family: sans-serif;
+     font-size: 95%;
+     width: auto;
+     margin:auto;
+ }
+
+ table, th, td {
+     border: 1px dotted black;
+ }
+
+</style>
+
+<div style="text-align: left;font-family: sans-serif;font-size: 95%;">
+
+__Automated email sent daily<br>
+<br>
+Dear All, <br>
+<br>
+Please find below sales data yesterday.<br>
+
+```{r echo = FALSE, warning = FALSE, error = FALSE, message = FALSE}
+
+library(readr)
+library(htmlTable) 
+library(dplyr)
+library(xtable)
+
+table1 <- xtable(step0query1, align = "ccc",latex.environments="center", 
+                 format.args = list(format = c("d","s","d")))
+table2 <- print(table1,type = "html", include.rownames=FALSE, file = "displayxiaomi.html")
+htmlTable(table2,align = "ccc")
+
+```
+</style>
+
+<div style="text-align: left; font-family: sans-serif; font-size: 60%">
+
+<br>
+
+CONFIDENTIALITY NOTICE: This message (including any attachments) is confidential and may be privileged. It may be read, copied and used only by the intended recipient. If you have received it in error please contact the sender (by return e-mail) immediately and delete this message. Any unauthorized use or dissemination of this message in whole or in parts is strictly prohibited. <br>
+DISCLAIMER: The information contained in this email, attachment, document and/or presentation have been researched by us with due care and all and any evaluations or assessments stated herein represent our personal opinions. We advise you that some of the available information may not have been independently verified and may be based on statements by third persons. No representation or warranty, expressed or implied, is made as to, and no reliance should be placed on, the fairness, accuracy, completeness or correctness of this information or opinions contained herein. Certain statements contained herein may be statements of future expectations and other forward-looking statements that are based on our current personal views and assumptions and involve known and unknown risks and uncertainties that cause actual results, performance or events to differ materially from those expressed or implied in such statements. None of our team shall assume any liability whatsoever (in negligence or otherwise) for any loss howsoever arising from any use of this email, attachment and/or presentation or the statements contained herein as to unverified third person statements, any statements of future expectations and other forward-looking statements, or the fairness, accuracy, completeness or correctness of statements contained herein, or otherwise arising in connection with this email, attachment, document and/or presentation.
+
